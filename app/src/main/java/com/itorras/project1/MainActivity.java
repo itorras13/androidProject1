@@ -3,6 +3,7 @@ package com.itorras.project1;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView pastCmpView2;
     private ImageView pastCmpView3;
     private ImageButton e_imgBtn, m_imgBtn, c_imgBtn;
+    private Button randomBtn;
     private TextView result_tv, count_tv, win_tv, comp_win_tv;
     int count = 0;
     int playerWinCount = 0;
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         c_imgBtn = (ImageButton) findViewById(R.id.btnCat);
         m_imgBtn = (ImageButton) findViewById(R.id.btnMouse);
 
+        randomBtn = (Button) findViewById(R.id.random);
+
         //intialize imgView
         imgView = (ImageView) findViewById(R.id.viewCmp);
         pastCmpView1 = (ImageView) findViewById(R.id.pastCmp1);
@@ -50,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
         e_imgBtn.setOnClickListener(myOnClickListener);
         c_imgBtn.setOnClickListener(myOnClickListener);
         m_imgBtn.setOnClickListener(myOnClickListener);
+
+
+        RandomOnClickListener randomOnClickListener = new RandomOnClickListener();
+        randomBtn.setOnClickListener(randomOnClickListener);
 
     }
 
@@ -73,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
     private class MyOnClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-
 
             setImage(pastCmpView1, lastAnimals[0]);
             setImage(pastCmpView2, lastAnimals[1]);
@@ -149,6 +156,28 @@ public class MainActivity extends AppCompatActivity {
                             break; }
                     break; }
         } }
+
+        private class RandomOnClickListener implements View.OnClickListener {
+            @Override
+            public void onClick(View v) {
+                int rand = (int) (Math.random() * 3 + 1);
+
+                switch (rand) {
+
+                    case 1:
+                        e_imgBtn.performClick();
+                        break;
+                    case 2:
+                        m_imgBtn.performClick();
+                        break;
+                    case 3:
+                        c_imgBtn.performClick();
+                        break;
+                }
+
+            }
+
+        }
 
 }
 
