@@ -79,18 +79,38 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/viewCmp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="42dp"
         android:textColor="#ff6ec7"
-        android:text="result"
+        android:text="Result"
+        android:textSize="15sp" />
+
+    <TextView android:id="@+id/winCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textResult"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="28dp"
+        android:textColor="#ff2400"
+        android:text="Player Win Count:"
+        android:textSize="15sp" />
+
+    <TextView android:id="@+id/compWinCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/winCount"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="14dp"
+        android:textColor="#ff2400"
+        android:text="Computer Win Count:"
         android:textSize="15sp" />
 
     <TextView android:id="@+id/textCount"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textResult"
+        android:layout_alignLeft="@+id/compWinCount"
         android:layout_alignParentBottom="true"
-        android:text="round:"
+        android:text="Round:"
         android:textColor="#ff2400"
         android:textSize="15sp" />
 
