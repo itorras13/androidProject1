@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/fg_title"
         android:layout_width="368dp"
-        android:src="@drawable/elephant"
+        android:src="@drawable/elephantMouse"
         android:layout_height="wrap_content" />
 
     <TextView
