@@ -79,6 +79,35 @@
         android:layout_marginLeft="20dp"
         android:contentDescription="cmpViewDes" />
 
+    <ImageView
+        android:id="@+id/pastCmp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btnElephant"
+        android:layout_below="@id/cmpShow"
+        android:layout_marginLeft="20dp"
+        android:contentDescription="pastCmp1" />
+
+    <ImageView
+        android:id="@+id/pastCmp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btnElephant"
+        android:layout_alignLeft="@+id/pastCmp1"
+        android:layout_below="@id/cmpShow"
+        android:layout_marginLeft="40dp"
+        android:contentDescription="pastCmp2" />
+
+    <ImageView
+        android:id="@+id/pastCmp3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btnElephant"
+        android:layout_alignLeft="@+id/pastCmp2"
+        android:layout_below="@id/cmpShow"
+        android:layout_marginLeft="40dp"
+        android:contentDescription="pastCmp3" />
+
     <TextView android:id="@+id/textResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
