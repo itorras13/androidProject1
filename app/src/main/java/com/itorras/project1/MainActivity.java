@@ -6,14 +6,16 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
     private ImageView imgView;
     private ImageButton e_imgBtn, m_imgBtn, c_imgBtn;
-    private TextView result_tv, count_tv;
-    private ImageView pastCmpView1;
+    private TextView result_tv, count_tv, win_tv, comp_win_tv;
     int count = 0;
+    int playerWinCount = 0;
+    int compWinCount = 0;
     int lastAnimal = 0;
 
     @Override
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         //intialize result and count TextView
         result_tv = (TextView) findViewById(R.id.textResult);
         count_tv = (TextView) findViewById(R.id.textCount);
+        win_tv = (TextView) findViewById(R.id.winCount);
+        comp_win_tv = (TextView) findViewById(R.id.compWinCount);
 
         MyOnClickListener myOnClickListener = new MyOnClickListener();
         e_imgBtn.setOnClickListener(myOnClickListener);
@@ -56,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
 
     private class MyOnClickListener implements View.OnClickListener {
         @Override
@@ -83,10 +88,14 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.btnMouse: //player choose Mouse
                             result_tv.setText("Result: " + "Win!");
                             count_tv.setText("Round: " + count);
+                            playerWinCount++;
+                            win_tv.setText("Player Win Count: " + playerWinCount);
                             break;
                         case R.id.btnCat: //player choose Cat
                             result_tv.setText("Result: " + "Lose!");
                             count_tv.setText("Round: " + count);
+                            compWinCount++;
+                            comp_win_tv.setText("Computer Win Count: " + compWinCount);
                             break; }
                     break;
                 case 2:
@@ -95,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.btnElephant:
                             result_tv.setText("Result: " + "Lose!");
                             count_tv.setText("Round: " + count);
+                            compWinCount++;
+                            comp_win_tv.setText("Computer Win Count: " + compWinCount);
                             break;
                         case R.id.btnMouse:
                             result_tv.setText("Result: " + "Tie!");
@@ -103,6 +114,8 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.btnCat:
                             result_tv.setText("Result: " + "Win!");
                             count_tv.setText("Round: " + count);
+                            playerWinCount++;
+                            win_tv.setText("Player Win Count: " + playerWinCount);
                             break; }
                     break;
                 case 3:
@@ -111,10 +124,14 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.btnElephant:
                             result_tv.setText("Result: " + "Win!");
                             count_tv.setText("Round: " + count);
+                            playerWinCount++;
+                            win_tv.setText("Player Win Count: " + playerWinCount);
                             break;
                         case R.id.btnMouse:
                             result_tv.setText("Result: " + "Lose!");
                             count_tv.setText("Round: " + count);
+                            compWinCount++;
+                            comp_win_tv.setText("Computer Win Count: " + compWinCount);
                             break;
                         case R.id.btnCat:
                             result_tv.setText("Result: " + "Tie!");
