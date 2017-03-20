@@ -13,7 +13,7 @@ import java.util.Queue;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageView imgView;
+    private ImageView playerView, cmpView;
     private ImageView pastCmpView1;
     private ImageView pastCmpView2;
     private ImageView pastCmpView3;
@@ -39,8 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
         randomBtn = (Button) findViewById(R.id.random);
 
-        //intialize imgView
-        imgView = (ImageView) findViewById(R.id.viewCmp);
+        //intialize Image Views
+        playerView = (ImageView) findViewById(R.id.playerMove);
+        cmpView = (ImageView) findViewById(R.id.cmpMove);
         pastCmpView1 = (ImageView) findViewById(R.id.pastCmp1);
         pastCmpView2 = (ImageView) findViewById(R.id.pastCmp2);
         pastCmpView3 = (ImageView) findViewById(R.id.pastCmp3);
@@ -94,21 +95,24 @@ public class MainActivity extends AppCompatActivity {
             lastAnimals[0] = rand;
 
             count++;//
-            switch (rand) { /*** rand = 1 means computer is Rock, * 2 represents Paper,* 3 represents scissors*/
+            switch (rand) { /*** rand = 1 means computer is Elephant, * 2 represents Mouse,* 3 represents Cat*/
                 case 1:
-                    imgView.setImageResource(R.drawable.elephant); //computer choose Elephant
+                    cmpView.setImageResource(R.drawable.elephant); //computer choose Elephant
                     switch (v.getId()) {
                         case R.id.btnElephant: //player choose Elephant
+                            playerView.setImageResource(R.drawable.elephant);
                             result_tv.setText("Result: " + "Tied!");
                             count_tv.setText("Round: " + count);
                             break;
                         case R.id.btnMouse: //player choose Mouse
+                            playerView.setImageResource(R.drawable.mouse);
                             result_tv.setText("Result: " + "Win!");
                             count_tv.setText("Round: " + count);
                             playerWinCount++;
                             win_tv.setText("Player Win Count: " + playerWinCount);
                             break;
                         case R.id.btnCat: //player choose Cat
+                            playerView.setImageResource(R.drawable.cat);
                             result_tv.setText("Result: " + "Lose!");
                             count_tv.setText("Round: " + count);
                             compWinCount++;
@@ -116,19 +120,22 @@ public class MainActivity extends AppCompatActivity {
                             break; }
                     break;
                 case 2:
-                    imgView.setImageResource(R.drawable.mouse); //computer choose Mouse
+                    cmpView.setImageResource(R.drawable.mouse); //computer choose Mouse
                     switch (v.getId()) {
                         case R.id.btnElephant:
+                            playerView.setImageResource(R.drawable.elephant);
                             result_tv.setText("Result: " + "Lose!");
                             count_tv.setText("Round: " + count);
                             compWinCount++;
                             comp_win_tv.setText("Computer Win Count: " + compWinCount);
                             break;
                         case R.id.btnMouse:
+                            playerView.setImageResource(R.drawable.mouse);
                             result_tv.setText("Result: " + "Tie!");
                             count_tv.setText("Round: " + count);
                             break;
                         case R.id.btnCat:
+                            playerView.setImageResource(R.drawable.cat);
                             result_tv.setText("Result: " + "Win!");
                             count_tv.setText("Round: " + count);
                             playerWinCount++;
@@ -136,21 +143,24 @@ public class MainActivity extends AppCompatActivity {
                             break; }
                     break;
                 case 3:
-                    imgView.setImageResource(R.drawable.cat); //computer chose Cat
+                    cmpView.setImageResource(R.drawable.cat); //computer chose Cat
                     switch (v.getId()) {
                         case R.id.btnElephant:
+                            playerView.setImageResource(R.drawable.elephant);
                             result_tv.setText("Result: " + "Win!");
                             count_tv.setText("Round: " + count);
                             playerWinCount++;
                             win_tv.setText("Player Win Count: " + playerWinCount);
                             break;
                         case R.id.btnMouse:
+                            playerView.setImageResource(R.drawable.mouse);
                             result_tv.setText("Result: " + "Lose!");
                             count_tv.setText("Round: " + count);
                             compWinCount++;
                             comp_win_tv.setText("Computer Win Count: " + compWinCount);
                             break;
                         case R.id.btnCat:
+                            playerView.setImageResource(R.drawable.cat);
                             result_tv.setText("Result: " + "Tie!");
                             count_tv.setText("Round: " + count);
                             break; }
