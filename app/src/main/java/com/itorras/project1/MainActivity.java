@@ -7,16 +7,22 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.View;
+import java.util.ArrayDeque;
+import java.util.Queue;
 
 public class MainActivity extends AppCompatActivity {
 
     private ImageView imgView;
+    private ImageView pastCmpView1;
+    private ImageView pastCmpView2;
+    private ImageView pastCmpView3;
     private ImageButton e_imgBtn, m_imgBtn, c_imgBtn;
     private TextView result_tv, count_tv, win_tv, comp_win_tv;
     int count = 0;
     int playerWinCount = 0;
     int compWinCount = 0;
     int lastAnimal = 0;
+    int[] lastAnimals = new int[3];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         //intialize imgView
         imgView = (ImageView) findViewById(R.id.viewCmp);
         pastCmpView1 = (ImageView) findViewById(R.id.pastCmp1);
+        pastCmpView2 = (ImageView) findViewById(R.id.pastCmp2);
+        pastCmpView3 = (ImageView) findViewById(R.id.pastCmp3);
         //intialize result and count TextView
         result_tv = (TextView) findViewById(R.id.textResult);
         count_tv = (TextView) findViewById(R.id.textCount);
@@ -65,16 +73,18 @@ public class MainActivity extends AppCompatActivity {
     private class MyOnClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            // TODO Auto-generated method stub
 
 
-
-            setImage(pastCmpView1, lastAnimal);
+            setImage(pastCmpView1, lastAnimals[0]);
+            setImage(pastCmpView2, lastAnimals[1]);
+            setImage(pastCmpView3, lastAnimals[2]);
 
             int rand = (int) (Math.random() * 3 + 1); // get a random numbe form 1 to 3
 
-            lastAnimal = rand;
-            System.out.println(lastAnimal);
+            for (int i = 2; i > 0; i--){
+                lastAnimals[i] = lastAnimals[i-1];
+            }
+            lastAnimals[0] = rand;
 
             count++;//
             switch (rand) { /*** rand = 1 means computer is Rock, * 2 represents Paper,* 3 represents scissors*/
