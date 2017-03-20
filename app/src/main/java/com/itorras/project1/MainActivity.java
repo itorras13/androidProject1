@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.view.View;
+import android.graphics.Color;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -105,19 +105,22 @@ public class MainActivity extends AppCompatActivity {
                     switch (v.getId()) {
                         case R.id.btnElephant: //both chose elephant, so it's a tie
                             setImage(playerView, 1);
-                            result_tv.setText("Result: " + "Tied!");
+                            result_tv.setTextColor(Color.parseColor("#ff6ec7"));
+                            result_tv.setText("Tie!");
                             count_tv.setText("Round: " + count);
                             break;
                         case R.id.btnMouse: //player chose mouse and computer chose elephant, so player wins
                             setImage(playerView, 2);
-                            result_tv.setText("Result: " + "Win!");
+                            result_tv.setTextColor(Color.parseColor("#009900"));
+                            result_tv.setText("You Win!");
                             count_tv.setText("Round: " + count);
                             playerWinCount++; // increase player win count
                             win_tv.setText("Player Win Count: " + playerWinCount);
                             break;
                         case R.id.btnCat: //player chose cat and computer chose elephant, so computer wins
                             setImage(playerView, 3);
-                            result_tv.setText("Result: " + "Lose!");
+                            result_tv.setTextColor(Color.parseColor("#b20000"));
+                            result_tv.setText("You Lose!");
                             count_tv.setText("Round: " + count);
                             compWinCount++; // increase computer win count
                             comp_win_tv.setText("Computer Win Count: " + compWinCount);
@@ -127,19 +130,22 @@ public class MainActivity extends AppCompatActivity {
                     switch (v.getId()) {
                         case R.id.btnElephant:
                             setImage(playerView, 1);
-                            result_tv.setText("Result: " + "Lose!");
+                            result_tv.setTextColor(Color.parseColor("#b20000"));
+                            result_tv.setText("You Lose!");
                             count_tv.setText("Round: " + count);
                             compWinCount++;
                             comp_win_tv.setText("Computer Win Count: " + compWinCount);
                             break;
                         case R.id.btnMouse:
                             setImage(playerView, 2);
-                            result_tv.setText("Result: " + "Tie!");
+                            result_tv.setTextColor(Color.parseColor("#ff6ec7"));
+                            result_tv.setText("Tie!");
                             count_tv.setText("Round: " + count);
                             break;
                         case R.id.btnCat:
                             setImage(playerView, 3);
-                            result_tv.setText("Result: " + "Win!");
+                            result_tv.setTextColor(Color.parseColor("#009900"));
+                            result_tv.setText("You Win!");
                             count_tv.setText("Round: " + count);
                             playerWinCount++;
                             win_tv.setText("Player Win Count: " + playerWinCount);
@@ -149,21 +155,24 @@ public class MainActivity extends AppCompatActivity {
                     switch (v.getId()) {
                         case R.id.btnElephant:
                             setImage(playerView, 1);
-                            result_tv.setText("Result: " + "Win!");
+                            result_tv.setTextColor(Color.parseColor("#009900"));
+                            result_tv.setText("You Win!");
                             count_tv.setText("Round: " + count);
                             playerWinCount++;
                             win_tv.setText("Player Win Count: " + playerWinCount);
                             break;
                         case R.id.btnMouse:
                             setImage(playerView, 2);
-                            result_tv.setText("Result: " + "Lose!");
+                            result_tv.setTextColor(Color.parseColor("#b20000"));
+                            result_tv.setText("You Lose!");
                             count_tv.setText("Round: " + count);
                             compWinCount++;
                             comp_win_tv.setText("Computer Win Count: " + compWinCount);
                             break;
                         case R.id.btnCat:
                             setImage(playerView, 3);
-                            result_tv.setText("Result: " + "Tie!");
+                            result_tv.setTextColor(Color.parseColor("#ff6ec7"));
+                            result_tv.setText("Tie!");
                             count_tv.setText("Round: " + count);
                             break; }
                     break; }
