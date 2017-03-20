@@ -2,6 +2,9 @@ package com.itorras.project1;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,60 +36,62 @@ public class MainActivity extends AppCompatActivity {
         m_imgBtn.setOnClickListener(myOnClickListener);
 
     }
+    private class MyOnClickListener implements OnClickListener {
+        @Override
+        public void onClick(View v) {
+            // TODO Auto-generated method stub
+            int rand = (int) (Math.random() * 3 + 1); // get a random numbe form 1 to 3
+
+            count++;//
+            switch (rand) { /*** rand = 1 means computer is Rock, * 2 represents Paper,* 3 represents scissors*/
+                case 1:
+                    imgView.setImageResource(R.drawable.elephant); //computer choose Elephant
+                    switch (v.getId()) {
+                        case R.id.btnElephant: //player choose Elephant
+                            result_tv.setText("Result: " + "Tied!");
+                            count_tv.setText("Round: " + count);
+                            break;
+                        case R.id.btnMouse: //player choose Mouse
+                            result_tv.setText("Result: " + "Win!");
+                            count_tv.setText("Round: " + count);
+                            break;
+                        case R.id.btnCat: //player choose Cat
+                            result_tv.setText("Result: " + "Lose!");
+                            count_tv.setText("Round: " + count);
+                            break; }
+                    break; case 2:
+                    imgView.setImageResource(R.drawable.mouse); //computer choose Mouse
+                    switch (v.getId()) {
+                        case R.id.btnElephant:
+                            result_tv.setText("Result: " + "Lose!");
+                            count_tv.setText("Round: " + count);
+                            break;
+                        case R.id.btnMouse:
+                            result_tv.setText("Result: " + "Tie!");
+                            count_tv.setText("Round: " + count);
+                            break;
+                        case R.id.btnCat:
+                            result_tv.setText("Result: " + "Win!");
+                            count_tv.setText("Round: " + count);
+                            break; }
+                    break; case 3:
+                    imgView.setImageResource(R.drawable.cat); //computer chose Cat
+                    switch (v.getId()) {
+                        case R.id.btnElephant:
+                            result_tv.setText("Result: " + "Win!");
+                            count_tv.setText("Round: " + count);
+                            break;
+                        case R.id.btnMouse:
+                            result_tv.setText("Result: " + "Lose!");
+                            count_tv.setText("Round: " + count);
+                            break;
+                        case R.id.btnCat:
+                            result_tv.setText("Result: " + "Tie!");
+                            count_tv.setText("Round: " + count);
+                            break; }
+                    break; }
+        } }
+
 }
 
-private class MyOnClickListener implements OnClickListener {
-    @Override
-    public void onClick(View v) {
-        // TODO Auto-generated method stub
-        int rand = (int) (Math.random() * 3 + 1); // get a random numbe form 1 to 3
 
-        count++;//
-        switch (rand) { /*** rand = 1 means computer is Rock, * 2 represents Paper,* 3 represents scissors*/
-        case 1:
-        imgView.setImageResource(R.drawable.elephant); //computer choose Elephant
-        switch (v.getId()) {
-            case R.id.btnElephant: //player choose Elephant
-                result_tv.setText("Result: " + "Tied!");
-                count_tv.setText("Round: " + count);
-                break;
-            case R.id.btnMouse: //player choose Mouse
-                result_tv.setText("Result: " + "Win!");
-                count_tv.setText("Round: " + count);
-                break;
-            case R.id.btnCat: //player choose Cat
-                result_tv.setText("Result: " + "Lose!");
-                count_tv.setText("Round: " + count);
-                break; }
-        break; case 2:
-        imgView.setImageResource(R.drawable.mouse); //computer choose Mouse
-        switch (v.getId()) {
-            case R.id.btnElephant:
-            result_tv.setText("Result: " + "Lose!");
-            count_tv.setText("Round: " + count);
-            break;
-            case R.id.btnMouse:
-                result_tv.setText("Result: " + "Tie!");
-                count_tv.setText("Round: " + count);
-                break;
-            case R.id.btnCat:
-                result_tv.setText("Result: " + "Win!");
-                count_tv.setText("Round: " + count);
-                break; }
-        break; case 3:
-        imgView.setImageResource(R.drawable.cat); //computer chose Cat
-        switch (v.getId()) {
-            case R.id.btnElephant:
-            result_tv.setText("Result: " + "Win!");
-            count_tv.setText("Round: " + count);
-            break;
-            case R.id.btnMouse:
-                result_tv.setText("Result: " + "Lose!");
-                count_tv.setText("Round: " + count);
-                break;
-            case R.id.btnCat:
-                result_tv.setText("Result: " + "Tie!");
-                count_tv.setText("Round: " + count);
-                break; }
-        break; }
-} }
