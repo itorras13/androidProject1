@@ -14,56 +14,61 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:id="@+id/cmpShow"
+        android:id="@+id/playerShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/fg_title"
         android:layout_marginLeft="20dp"
+        android:text="Choose"
+        android:textColor="#ff0000" />
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/playerShow"
+        android:orientation="horizontal"
+        >
+
+        <ImageButton
+            android:id="@+id/btnCat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="CAT"
+            android:src="@drawable/cat" />
+
+        <ImageButton
+            android:id="@+id/btnMouse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="MOUSE"
+            android:src="@drawable/mouse" />
+
+        <ImageButton
+            android:id="@+id/btnElephant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="ELEPHANT"
+            android:src="@drawable/elephant" />
+
+        <Button
+            android:id="@+id/random"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Random"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/cmpShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_layout"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
         android:text="Computer"
         android:textColor="#ff0000" />
 
-    <TextView
-        android:id="@+id/playerShow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/fg_title"
-        android:layout_marginRight="20dp"
-        android:text="Player"
-        android:textColor="#ff0000" />
-
-    <ImageButton
-        android:id="@+id/btnCat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/playerShow"
-        android:layout_below="@id/playerShow"
-        android:layout_marginTop="9dp"
-        android:contentDescription="CAT"
-        android:src="@drawable/cat"
-        android:layout_alignRight="@+id/playerShow"
-        android:layout_alignEnd="@+id/playerShow" />
-
-    <ImageButton
-        android:id="@+id/btnMouse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="MOUSE"
-        android:src="@drawable/mouse"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/btnCat"
-        android:layout_alignStart="@+id/btnCat" />
-
-    <ImageButton
-        android:id="@+id/btnElephant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="ELEPHANT"
-        android:src="@drawable/elephant"
-        android:layout_marginTop="27dp"
-        android:layout_below="@+id/btnMouse"
-        android:layout_alignLeft="@+id/btnMouse"
-        android:layout_alignStart="@+id/btnMouse" />
 
     <ImageView
         android:id="@+id/viewCmp"
